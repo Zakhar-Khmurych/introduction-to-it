@@ -18,6 +18,7 @@ const polyline = [
   { x: 30, y: 30 },
 ];
 
+
 const offset = move({ x: 10, y: -5 });
 const parsed = polyline.map(conditionalParse);
 const path = parsed.map(offset);
