@@ -2,14 +2,11 @@
 
 const move = (offset) => (point) => {
   const type = typeof point;
-  if (type === 'object') {
-    point.x += offset.x;
-    point.y += offset.y;
-  } else {
+  if (type != 'object') {
     point = JSON.parse(point);
+  }
     point.x += offset.x;
     point.y += offset.y;
-  }
   return point;
 };
 
