@@ -3,13 +3,10 @@ import json
 def shift(offset, points):
     def plus(point):    
         type_p = type(point)
-        if type_p == dict:
-            point['x'] += offset['x']
-            point['y'] += offset['y']
-        else:
+        if type_p != dict:
             point = json.loads(point)
-            point["x"] += offset['x']
-            point["y"] += offset['y']
+        point["x"] += offset['x']
+        point["y"] += offset['y']
         return point
     moved = list(map(plus, points))
     return moved
